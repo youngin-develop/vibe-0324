@@ -1,1 +1,82 @@
-/* Add styles here */
+:root {
+  --bg-color: oklch(98% 0.01 260);
+  --card-bg: oklch(100% 0 0);
+  --primary: oklch(60% 0.2 260);
+  --primary-glow: oklch(60% 0.2 260 / 30%);
+  --text-main: oklch(25% 0.02 260);
+  --text-muted: oklch(50% 0.02 260);
+  --input-border: oklch(90% 0.02 260);
+  --input-focus: oklch(75% 0.1 260);
+  
+  --shadow-lifted:
+    0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  --radius: 16px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-blend-mode: overlay;
+}
+
+.container { width: 100%; max-width: 600px; container-type: inline-size; }
+
+.header { text-align: center; margin-bottom: 2.5rem; }
+.header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, var(--primary), oklch(50% 0.2 300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-wrapper {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lifted);
+}
+
+form { display: grid; gap: 1.5rem; }
+.form-group { display: grid; gap: 0.5rem; }
+.form-group:has(input:focus, textarea:focus) label { color: var(--primary); transform: translateX(4px); }
+
+label { font-size: 0.9rem; font-weight: 600; transition: var(--transition); }
+input, textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--input-border);
+  border-radius: 10px;
+  transition: var(--transition);
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 4px var(--primary-glow);
+}
+
+.submit-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.submit-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }

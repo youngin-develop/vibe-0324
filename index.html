@@ -1,14 +1,59 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <title>Partnership Request | Modern Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="/style.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
+  <div class="container">
+    <header class="header">
+      <h1>제휴 제안하기</h1>
+      <p>우리의 비전을 함께할 멋진 파트너를 기다립니다.</p>
+    </header>
+    
+    <main class="form-wrapper">
+      <form action="https://formspree.io/f/mqegkgpl" method="POST" id="partnership-form">
+        <div class="form-group">
+          <label for="full-name">성함 / 담당자명</label>
+          <input type="text" id="full-name" name="name" placeholder="홍길동" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">이메일 주소</label>
+          <input type="email" id="email" name="_replyto" placeholder="example@company.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="organization">회사 / 단체명</label>
+          <input type="text" id="organization" name="organization" placeholder="회사명을 입력해주세요">
+        </div>
+        
+        <div class="form-group">
+          <label for="website">웹사이트 (선택사항)</label>
+          <input type="url" id="website" name="website" placeholder="https://">
+        </div>
+        
+        <div class="form-group">
+          <label for="proposal">제휴 제안 내용</label>
+          <textarea id="proposal" name="message" placeholder="제휴하고 싶은 내용에 대해 자유롭게 작성해주세요" rows="6" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          제안서 보내기
+          <span class="icon">🚀</span>
+        </button>
+      </form>
+    </main>
+    
+    <footer class="footer">
+      <p>&copy; 2026 Modern Partnership Portal. All rights reserved.</p>
+    </footer>
+  </div>
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>
