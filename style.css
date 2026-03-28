@@ -214,6 +214,16 @@ body {
   box-shadow: var(--shadow-deep);
 }
 
+#disqus_thread {
+  min-height: 400px;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border: 2px dashed oklch(90% 0.1 330);
+}
+
 .comments-section h3 {
   margin-bottom: 1.5rem;
   font-family: 'Gaegu', cursive;
